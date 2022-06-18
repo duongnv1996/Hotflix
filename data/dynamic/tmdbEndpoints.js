@@ -6,72 +6,97 @@ so don't worry too much about making it public
 since you can get API keys for free. 
 And there's very little motivation for anyone to steal it.
 */
-const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
 export const TMDB = {
   TVShows: {
     sections: [
       {
+        title: 'Phim Chiếu Rạp',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=chieurap&filterValueQuery=dHJ1ZQ==&serverQuery=phimhd2`,
+      },
+      {
         title: 'Popular on Hotflix',
-        endpoint: `/tv/popular?api_key=${API_KEY}`,
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=category&filterValueQuery=SMOgbmggxJDhu5luZw==&serverQuery=phimhd2`,
+        size: 'large'
       },
       {
-        title: 'Trending Now',
-        endpoint: `/trending/tv/day?api_key=${API_KEY}&page=_pageNumber`,
+        title: 'Phim Lẻ',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=type&filterValueQuery=c2luZ2xl&serverQuery=phimhd2`,
       },
       {
-        title: 'War Politics',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10768&with_watch_providers=8&watch_region=AU`,
+        title: 'Phim Bộ',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=type&filterValueQuery=c2VyaWVz&serverQuery=phimhd2`,
       },
       {
-        title: 'Hotflix Original',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_networks=213&with_watch_providers=8&watch_region=AU`,
-        size: 'large',
+        title: 'Chill Cùng Các Oppa',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=country&filterValueQuery=SMOgbiBRdeG7kWM=&serverQuery=phimhd2`,
       },
       {
-        title: 'Sci-Fi & Fantasy',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10765&with_watch_providers=8&watch_region=AU`,
+        title: 'Gia Đình Là Số 1',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=category&filterValueQuery=R2lhIMSQw6xuaA==&serverQuery=phimhd2`,
       },
       {
-        title: 'Documentary',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=99&with_watch_providers=8&watch_region=AU`,
+        title: 'Học Đường Nổi Loạn',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=category&filterValueQuery=SOG7jWMgxJDGsOG7nW5n&serverQuery=phimhd2`,
       },
       {
-        title: 'Comedy',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=35&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Animation',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=16&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Drama',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=18&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Family',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10751&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Mystery',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=9648&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Action-Adventure',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10759&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Crime',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=80&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Reality',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10764&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Talk',
-        endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10767&with_watch_providers=8&watch_region=AU`,
-      },
+        title: 'Anime',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=type&filterValueQuery=aG9hdGhpbmg=&serverQuery=phimhd2`,
+      }
+      // {
+      //   title: 'War Politics',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10768&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Hotflix Original',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_networks=213&with_watch_providers=8&watch_region=AU`,
+      //   size: 'large',
+      // },
+      // {
+      //   title: 'Sci-Fi & Fantasy',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10765&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Documentary',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=99&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Comedy',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=35&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Animation',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=16&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Drama',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=18&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Family',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10751&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Mystery',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=9648&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Action-Adventure',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10759&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Crime',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=80&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Reality',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10764&with_watch_providers=8&watch_region=AU`,
+      // },
+      // {
+      //   title: 'Talk',
+      //   endpoint: `/discover/tv?api_key=${API_KEY}&with_genres=10767&with_watch_providers=8&watch_region=AU`,
+      // },
     ],
     helpers: {
       searchTV: `/search/tv?api_key=${API_KEY}&query=_query`,
@@ -86,90 +111,37 @@ export const TMDB = {
   movies: {
     sections: [
       {
+        title: 'Phim Chiếu Rạp',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=chieurap&filterValueQuery=dHJ1ZQ==&serverQuery=phimhd2`,
+      },
+      {
         title: 'Popular on Hotflix',
-        endpoint: `/movie/popular?api_key=${API_KEY}&region=AU`,
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=category&filterValueQuery=SMOgbmggxJDhu5luZw==&serverQuery=phimhd2`,
       },
       {
-        title: 'Trending Now',
-        endpoint: `/trending/movie/day?api_key=${API_KEY}`,
+        title: 'Phim Lẻ',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=type&filterValueQuery=c2luZ2xl&serverQuery=phimhd2`,
       },
       {
-        title: 'Upcoming',
-        endpoint: `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1&region=AU`,
+        title: 'Phim Bộ',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=type&filterValueQuery=c2VyaWVz&serverQuery=phimhd2`,
       },
       {
-        title: 'Hotflix Original',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_networks=213&with_watch_providers=8&watch_region=AU`,
-        size: 'large',
+        title: 'Chill Cùng Các Oppa',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=country&filterValueQuery=SMOgbiBRdeG7kWM=&serverQuery=phimhd2`,
       },
       {
-        title: 'Playing in Australian Cinemas',
-        endpoint: `movie/now_playing?api_key=${API_KEY}&language=en-US&page=1&region=AU`,
+        title: 'Gia Đình Là Số 1',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=category&filterValueQuery=R2lhIMSQw6xuaA==&serverQuery=phimhd2`,
       },
       {
-        title: 'Sci-Fi',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=878&with_watch_providers=8&watch_region=AU`,
+        title: 'Học Đường Nổi Loạn',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=category&filterValueQuery=SOG7jWMgxJDGsOG7nW5n&serverQuery=phimhd2`,
       },
       {
-        title: 'Drama',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=18&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Fantasy',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=14&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Crime',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=80&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Mystery',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=9648&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Action',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=28&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Comedy',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=35&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Animation',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=16&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Adventure',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=12&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Family',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=10751&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'TV',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=10770&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Documentary',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=99&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'War',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=10752&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'History',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=36&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Western',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=37&with_watch_providers=8&watch_region=AU`,
-      },
-      {
-        title: 'Thriller',
-        endpoint: `/discover/movie?api_key=${API_KEY}&with_genres=53&with_watch_providers=8&watch_region=AU`,
-      },
+        title: 'Anime',
+        endpoint: `api/phimhd/searchByQuery?&filterKeyQuery=type&filterValueQuery=aG9hdGhpbmg=&serverQuery=phimhd2`,
+      }
     ],
     helpers: {
       searchMovie: `/search/movie?api_key=${API_KEY}&query=_query`,
@@ -180,4 +152,4 @@ export const TMDB = {
       fetchMovieCredits: `/movie/_id/credits?api_key=${API_KEY}`,
     },
   },
-};
+}

@@ -23,7 +23,7 @@ export default function Content() {
   // states for visual effects
   const [loading, setLoading] = useState(true);
   const [showTrailer, setShowTrailer] = useState(false);
-  const [rowsShown, setRowsShown] = useState(5);
+  const [rowsShown, setRowsShown] = useState(10);
 
   // handle situations when users click 'Play' or 'More info' buttons before video starts to play
   const [distracted, setDistracted] = useState(false);
@@ -53,7 +53,7 @@ export default function Content() {
     return () => window.removeEventListener('scroll', onWindowScroll);
   }, []);
 
-  useEffect(() => setRowsShown(5), [category]);
+  useEffect(() => setRowsShown(10), [category]);
 
   const providerValue = {
     mute,

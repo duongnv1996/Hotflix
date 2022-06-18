@@ -27,7 +27,7 @@ export default function Slider({ section, category }) {
 
       const filteredItems = sliderItems.filter(
         ({ original_language, backdrop_path, poster_path }) =>
-          original_language === 'en' && backdrop_path && poster_path
+           backdrop_path && poster_path
       );
 
       mountRef.current && setSliderItems(filteredItems);

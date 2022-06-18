@@ -1,11 +1,11 @@
-import * as styled from './searchResultsStyles';
-import Card from './Card';
-import { BackIcon } from './playerStyles';
+import * as styled from './searchResultsStyles'
+import Card from './Card'
+import { BackIcon } from './playerStyles'
 
-import { ProfileContext } from 'components/layout/Layout';
-import { useContext } from 'react';
+import { ProfileContext } from 'components/layout/Layout'
+import { useContext } from 'react'
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect'
 
 export default function SearchResults() {
   const { searchResults, setSearchResults, setSearchInput } =

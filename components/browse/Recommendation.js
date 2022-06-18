@@ -11,7 +11,7 @@ import useSafeMounted from 'hooks/useSafeMounted';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-export default function Recommendation({ category, id, placeholder }) {
+export default function Recommendation({ category, id, placeholder, raw, setSelectedItem}) {
   const [recommendations, setRecommendations] = useState();
   const [showAll, setShowAll] = useState(false);
 
@@ -19,7 +19,7 @@ export default function Recommendation({ category, id, placeholder }) {
 
   useEffect(() => {
     const getRecommendations = async () => {
-      const recommendations = await fetchRecommendations(category, id);
+      const recommendations = await fetchRecommendations(category, id, raw);
       mountRef.current && setRecommendations(recommendations);
     };
     getRecommendations();
@@ -44,15 +44,19 @@ export default function Recommendation({ category, id, placeholder }) {
               i
             ) =>
               (showAll || (!showAll && i < 9)) && (
-                <styled.GridItem key={id}>
+                <styled.GridItem key={id} onClick={(e) => {
+                  e.preventDefault()
+                  setSelectedItem({ id, name, backdrop_path})
+                }}>
                   <styled.Wrapper>
                     <Image
-                      src={`https://image.tmdb.org/t/p/w300/${
+                      src={`${
                         backdrop_path || placeholder
                       }`}
                       width={300}
                       height={169}
                       alt={name}
+                      objectFit="cover"
                     />
                   </styled.Wrapper>
                   <styled.Details>

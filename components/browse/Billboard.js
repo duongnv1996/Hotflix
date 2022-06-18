@@ -102,13 +102,7 @@ export default function Billboard({
         <>
           <styled.Banner>
             <Image
-              src={`https://image.tmdb.org/t/p/${
-                windowWidth <= 600
-                  ? 'w780'
-                  : windowWidth <= 1000
-                  ? 'w1280'
-                  : 'original'
-              }${banner.backdrop_path}`}
+              src={`${banner.backdrop_path}`}
               alt={banner.title}
               layout="fill"
               objectFit="cover"
